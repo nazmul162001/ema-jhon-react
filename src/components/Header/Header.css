@@ -6,6 +6,13 @@
   align-items: center;
   padding: 5px 140px;
 }
+.header img{
+  transition: transform .2s ease-in-out;
+  cursor: pointer;
+}
+.header img:hover{
+  transform: scale(1.2);
+}
 .header a{
   color: #ffffff;
   text-decoration: none;
