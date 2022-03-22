@@ -1,0 +1,18 @@
+.product{
+  width: 300px;
+  height: 510px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+.product img{
+  width: 286px;
+  height: 286px;
+}
+.product-name{
+  font-family: 'lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+}
