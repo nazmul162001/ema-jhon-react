@@ -33,6 +33,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  cursor: pointer;
 }
 .btn-cart:hover{
   background-color: orange;
