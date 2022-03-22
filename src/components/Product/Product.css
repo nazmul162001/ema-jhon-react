@@ -4,10 +4,17 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   padding: 1.5rem;
   border-radius: 10px;
+  position: relative;
+  transition: .2s ease-in-out;
+}
+.product:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transform: translateY(-15px) scale(1.02);
 }
 .product img{
   width: 286px;
   height: 286px;
+  border-radius: 10px;
 }
 .product-name{
   font-family: 'lato';
@@ -15,4 +22,18 @@
   font-weight: 400;
   font-size: 21px;
   line-height: 25px;
+}
+.btn-cart{
+  width: 100%;
+  background-color: #FFE0B3;
+  border: none;
+  border-radius: 0 0 8px 8px;
+  transition: .2s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.btn-cart:hover{
+  background-color: orange;
 }
