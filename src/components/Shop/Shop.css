@@ -9,3 +9,18 @@
   margin-top: 50px;
   padding: 0 2rem;
 }
+
+.cart-container{
+  position: fixed;
+  top: 15%;
+  right: 1%;
+}
+
+
+/* responsive  */
+/* @media screen  and (max-width:1100px) {
+  .products-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */

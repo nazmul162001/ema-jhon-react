@@ -1,5 +1,5 @@
 .product{
-  width: 300px;
+  /* width: 300px; */
   height: 510px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   padding: 1.5rem;
@@ -12,8 +12,8 @@
   transform: translateY(-15px) scale(1.02);
 }
 .product img{
-  width: 286px;
-  height: 286px;
+  max-width: 286px;
+  max-height: 286px;
   border-radius: 10px;
 }
 .product-name{
