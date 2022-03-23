@@ -11,9 +11,7 @@
 }
 
 .cart-container{
-  position: fixed;
-  top: 15%;
-  right: 1%;
+  background-color: rgba(255, 153, 0, 0.3);
 }
 
 
