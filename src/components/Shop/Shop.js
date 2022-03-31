@@ -28,7 +28,7 @@ const Shop = () => {
       }
     }
     setCart(savedCart);
-  },[products])
+  },[products]);
   
 
 
