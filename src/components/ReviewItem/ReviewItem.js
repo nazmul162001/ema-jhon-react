@@ -18,6 +18,7 @@ const ReviewItem = (props) => {
             <p className="price">Price:$ <span className='orange-color'>{price}</span></p>
             <p className="shipping">Shipping:$<small className="shipping-price">{shipping}</small></p>
             <p><small>{quantity}</small></p>
+  
           </div>
           <div className="delete-container">
             <button onClick={() => handleRemoveProduct(product)} className='delete-button'>
