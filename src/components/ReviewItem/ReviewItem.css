@@ -21,3 +21,16 @@
   align-items: center;
   padding: 0 15px;
 }
+.review-item .delete-button{
+  background-color: rgba(235, 87, 87, 0.3);
+  border: 0;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.delete-icon{
+  font-size: 27px;
+  color: rgba(235,87,87,1);
+}
+
