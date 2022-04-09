@@ -1,0 +1,86 @@
+.form-container{
+  width: 600px;
+  margin: 40px auto 0 auto;
+  border: 1px solid #95A0A7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(255, 153, 0, 0.3) -8px 8px, rgba(240, 46, 170, 0.05) -25px 25px;
+  align-items: center;
+}
+.input-group{
+  margin-bottom: 10px;
+}
+
+.form-title{
+  font-size: 35px;
+  color: #2A414F;
+  font-weight: 400;
+  text-align: center;
+}
+.input-group label{
+  display: block;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.input-group input {
+  width: 415px;
+  height: 40px;
+  border: 1px solid #95A0A7;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 24px;
+  padding-left: 20px;
+}
+
+.form-submit{
+  width: 415px;
+  height: 40px;
+  background: rgba(255, 153, 0, 0.3);
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.form-submit:hover{
+  background-color: rgba(255,153,0,0.5);
+}
+.form-link{
+  color: #FF9900;
+  text-decoration: none;
+}
+
+.horizontal-area{
+  position: relative;
+  height: 20px;
+}
+.horizontal-text{
+  position: absolute;
+  padding: 0 20px;
+  background-color: white;
+  top: -30px;
+  left: 43%;
+}
+
+.google-login{
+  text-align: center;
+}
+.google-login .google-button{
+  border: none;
+  padding: 10px 0;
+  width: 90%;
+  margin: 10px 0;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.336);
+  border-radius: 5px;
+}
+.google-icon{
+  padding-right: 5px;
+  font-size: 30px;
+}
