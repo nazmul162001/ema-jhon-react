@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css';
 import { FcGoogle } from 'react-icons/fc';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const SignUp = () => {
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [error, setError] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+  const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
+  const navigate = useNavigate()
 
   const handleEmail = event => {
     setEmail(event.target.value)
@@ -20,19 +24,29 @@ const SignUp = () => {
     setConfirmPassword(event.target.value)
   }
 
+  if(user){
+    navigate('/')
+  }
+
   const handleCreateUser = (event) => {
     event.preventDefault();
     if(password !== confirmPassword) {
       setError('Your password did not matched')
       return;
     }
-    console.log(email, password, confirmPassword);
+    if(password.length < 6){
+      setError('Password must be 6 character')
+      return;
+    }
+    createUserWithEmailAndPassword(email, password)
+    setError('')
   }
 
   return (
     <div className="form-container">
       <div className="input-field">
         <h2 className="form-title">Sign Up</h2>
+
         <form onSubmit={handleCreateUser}>
           {/* Email field  */}
           <div className="input-group">
