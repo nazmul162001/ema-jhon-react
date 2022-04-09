@@ -25,7 +25,7 @@ const SignUp = () => {
   }
 
   if(user){
-    navigate('/')
+    navigate('/login')
   }
 
   const handleCreateUser = (event) => {
@@ -68,7 +68,7 @@ const SignUp = () => {
             {error}
           </p>
           {/* Submit button  */}
-          <input className="form-submit" type="submit" value="submit" />
+          <input className="form-submit" type="submit" value="Sign Up" />
         </form>
         {/* Sign in page  */}
         <p style={{ textAlign: 'center' }}>
