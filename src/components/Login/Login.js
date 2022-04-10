@@ -4,6 +4,7 @@ import './Login.css';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const location = useLocation();
-
+  const provider = new GoogleAuthProvider();
   const from = location.state?.from?.pathname || '/';
 
   const handleEmail = (event) => {
@@ -30,6 +31,18 @@ const Login = () => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
   };
+
+    // handleGoogleSignIN
+    const handleGoogleSignIn = () => {
+      signInWithPopup(auth, provider)
+      .then(res => {
+        const user = res.user
+        console.log(user);
+      })
+      .catch(error => {
+        console.error('error', error)
+      })
+    }
 
   return (
     <div className="form-container">
@@ -78,7 +91,7 @@ const Login = () => {
         </div>
         {/* google login  */}
         <div className="google-login">
-          <button className="google-button">
+          <button onClick={handleGoogleSignIn} className="google-button">
             {' '}
             <FcGoogle className="google-icon"></FcGoogle> Continue with google
           </button>

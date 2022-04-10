@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {
+  useAuthState,
+  useCreateUserWithEmailAndPassword,
+} from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const Shipment = () => {
@@ -7,11 +10,8 @@ const Shipment = () => {
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
-  const [createUserWithEmailAndPassword, user] =
-    useCreateUserWithEmailAndPassword(auth);
+  const [user] = useAuthState(auth);
   // const navigate = useNavigate()
-
-
 
   const handleName = (event) => {
     setName(event.target.value);
@@ -25,6 +25,7 @@ const Shipment = () => {
 
   const handleCreateUser = (event) => {
     event.preventDefault();
+    const shipping = {name, address, phone}
   };
 
   return (
@@ -33,16 +34,6 @@ const Shipment = () => {
         <h2 className="form-title">Shipping information</h2>
 
         <form onSubmit={handleCreateUser}>
-          {/* Email field  */}
-          <div className="input-group">
-            <label htmlFor="email">Your Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-            />
-          </div>
           {/* Name field  */}
           <div className="input-group">
             <label htmlFor="name">Your Name</label>
@@ -54,7 +45,20 @@ const Shipment = () => {
               required
             />
           </div>
-          {/* Password field  */}
+
+          {/* Email field  */}
+          <div className="input-group">
+            <label htmlFor="email">Your Email</label>
+            <input
+              value={user?.email}
+              readOnly
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+          {/* address field  */}
           <div className="input-group">
             <label htmlFor="address">Address</label>
             <input
@@ -65,7 +69,7 @@ const Shipment = () => {
               required
             />
           </div>
-          {/* Confirm password  */}
+          {/* phone number  */}
           <div className="input-group">
             <label htmlFor="phone">Phone Number</label>
             <input
