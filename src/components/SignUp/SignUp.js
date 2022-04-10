@@ -25,7 +25,7 @@ const SignUp = () => {
   }
 
   if(user){
-    navigate('/login')
+    navigate('/')
   }
 
   const handleCreateUser = (event) => {
