@@ -21,6 +21,11 @@
   border: 1px solid orange;
 }
 
+.pagination .selected{
+  background-color: orange;
+  color: white;
+}
+
 /* responsive  */
 /* @media screen  and (max-width:1100px) {
   .products-container{
